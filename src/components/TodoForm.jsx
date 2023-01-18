@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Button, Card, Flex, TextInput } from "@mantine/core";
 
-function TodoForm() {
+function TodoForm({addTodo}) {
     const [task, setTask] = useState('');
     const [isValid, setIsValid] = useState(false);
 
@@ -14,9 +14,17 @@ function TodoForm() {
         else setIsValid(false);
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if(isValid){
+            addTodo(task);
+            setTask('');
+        }
+    }
+
     return (
         <Card sx={{ marginBottom: 20, padding: 'md' }}>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <Flex gap='md'>
                     <TextInput
                         sx={{ flexGrow: 1 }}
