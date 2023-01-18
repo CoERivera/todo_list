@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { MantineProvider } from '@mantine/core';
@@ -15,12 +14,12 @@ root.render(
       withNormalizeCSS
       theme={{
         colorScheme: 'dark',
-        primaryColor: 'grape',
+        primaryColor: 'teal',
         primaryShade: 6,
         cursorType: 'pointer',
-        fontFamily: 'Ubuntu Condensed, sans-serif',
+        fontFamily: 'Lora, sans-serif',
         headings: {
-          fontFamily: 'Lora, sans-serif'
+          fontFamily: 'Ubuntu Condensed, sans-serif'
         },
         fontSizes: {
           xs: 16,
