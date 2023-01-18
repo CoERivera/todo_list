@@ -3,16 +3,34 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { MantineProvider, Text } from '@mantine/core';
+import { MantineProvider } from '@mantine/core';
+import '@fontsource/lora';
+import '@fontsource/ubuntu-condensed';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MantineProvider 
-      withGlobalStyles 
+    <MantineProvider
+      withGlobalStyles
       withNormalizeCSS
-      >
-        <App />
+      theme={{
+        colorScheme: 'dark',
+        primaryColor: 'grape',
+        primaryShade: 6,
+        cursorType: 'pointer',
+        fontFamily: 'Ubuntu Condensed, sans-serif',
+        headings: {
+          fontFamily: 'Lora, sans-serif'
+        },
+        fontSizes: {
+          xs: 16,
+          sm: 18,
+          md: 20,
+          lg: 22,
+          xl: 24
+        }
+      }}>
+      <App />
     </MantineProvider>
   </React.StrictMode>
 );
